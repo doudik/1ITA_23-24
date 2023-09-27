@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: black;
+    width: 50vw;
+    height: 50vh;
+    padding: 10px;
+}
+.listbox-header{
+    width: 100%;
+    height: 50px;
+}
+.listbox-header h1{
+    text-justify: center;
+    text-align: center;
+    color: pink;
+}
+.listbox{
+    width: 100%;
+    height: 100%;
+}
+.listbox ul{
+    padding: 25px;
+}
+.listbox li{
+    color:white;
+    font-size: larger;
+}
