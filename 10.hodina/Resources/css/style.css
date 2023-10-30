@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.okno{
+    width: 40vw;
+    background-color: black;
+    border: 1px solid yellow;
+    height: 20vh;
+}
+@media only screen and (max-width: 412px){
+    .okno{
+        width: 100vw;
+        
+    }
+}
