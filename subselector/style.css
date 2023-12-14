@@ -1,0 +1,44 @@
+table{
+    width: 70vw;
+    height: auto;
+    background-color: yellow;
+    min-width: 500px;
+    max-width: 1000px;
+}
+table tr{
+    width: 100%;
+}
+table tr td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: white;
+}
+table tr td.red{
+    background-color: red;
+}
+Header h1.largeFont,h2{
+    color: blue;
+}
+Header h1:before{
+    content: "Ciao ";
+}
+Header h1:after{
+    content: " Mondo";
+}
+table td:hover, td.red:hover{
+    background-color: rgba(251, 169, 5, 0.5);
+}
+table td:nth-child(3n){
+    background-color: rgba(0, 0, 0, 0.5);
+}
+table td:first-child{
+    background-color: blue;
+}
+table td:last-child{
+    background-color: #1EBB47;
+}
+body a[target = "_blank"]{
+    text-decoration: none;
+    color: black;
+}
