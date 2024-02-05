@@ -1,6 +1,8 @@
 let container = document.createElement("div");
 container.style.display = "flex";
-container.setAttribute("col-sm-3", "col-sm-3");
+container.style.maxWidth = "100vw";
+container.style.flexWrap = "wrap";
+container.setAttribute("md-6", "true");
 
 function CreateSquare(){
     let square = document.createElement("div");
