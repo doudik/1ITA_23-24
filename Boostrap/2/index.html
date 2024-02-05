@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../Bootstrap_css/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+    <body>
+        <div class="accordion" id="accordionExample"> <!-- init accordion -->
+            <div class="accordion-item"> <!-- first item -->
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Accordion one #1</button>
+                </h2> <!-- end accordion header -->
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h2>Můj první collapse text</h2>
+                        <p>Tohle je můj text.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item"> <!-- second item -->
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond">Accordion two #2</button>
+                </h2> <!-- end accordion header -->
+                <div id="collapseSecond" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h2>Můj druhý collapse text</h2>
+                        <p>Tohle je můj text.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item"> <!-- third item -->
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird">Accordion three #3</button>
+                </h2> <!-- end accordion header -->
+                <div id="collapseThird" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h2>Můj třetí collapse text</h2>
+                        <p>Tohle je můj text.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of accordion -->
+        <!-- start of static alert -->
+        <div class="alert alert-danger" role="alert">
+            <h3>Pozor!</h3>
+            <p>Váš počítač byl napaden!</p>
+        </div>
+        <!-- end of static alert -->
+        <!-- start of button alert -->
+        <div id="liveAlertPlaceholder"></div>
+        <button class="btn btn-primary" id="liveAlertBtn" type="button">Live Alert Button</button>
+        <!-- end of button alert -->
+        <!-- start of custon href link alert -->
+        <div class="alert alert-warning" role="alert">
+            <p>Simple text with <a href="#" class="alert-link">custom alert</a>.</p>
+        </div>
+        <!-- end of custom href link alert -->
+        <!-- alert with diviners -->
+        <div class="alert alert-success" role="alert">
+            <h3 class="alert-heading">
+                Dneska vám to jde skvěle!
+            </h3>
+            <hr> <!-- diviner -->
+            <p class="mb-0">Jste šikulky!</p>
+        </div>
+        <!-- end of alert with diviners -->
+        <!-- alert with icons via svg -->
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>
+                <h3>Pozor!</h3>
+                <hr>
+                <p>Na Vašem počítači byl nalezen virus!</p>
+            </div>
+        </div>
+        <!-- end of svg alert -->
+        <!-- js imports -->
+    </body>
+    <script src="./liveAlertSnippet.js"></script>
+    <script src="../../Bootstrap_css/js/bootstrap.min.js"></script>
+</html>
