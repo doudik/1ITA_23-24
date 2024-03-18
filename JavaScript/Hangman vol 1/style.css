@@ -1,0 +1,33 @@
+.container{
+    height: 100vh;
+    align-items: center;
+}
+
+.container > .dashes {
+    height: 40%;
+}
+.container > .dashes > ul {
+    /* padding: top right bottom left; */
+    padding: 120px 0 0 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container > .dashes > ul > li {
+    list-style: none;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.container > .alphabet {
+    height: 60%;
+    padding: 120px 100px 120px 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container > .alphabet > button {
+    margin: 5px;
+    padding: 20px;
+    font-size: 2rem;
+}
