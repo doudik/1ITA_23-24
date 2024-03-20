@@ -144,60 +144,67 @@ const ceskaAbeceda = [
   "Z",
   "Ž",
 ];
+
 let guessingWord = "";
 let dashArray = [];
+getRandomWordandFillDashes();
 
-getRandomWordAndFillDashes();
-
-function getRandomWordAndFillDashes(){
-    guessingWord = slova[Math.floor(Math.random() * slova.length)].toUpperCase();
+function getRandomWordandFillDashes() {
+  guessingWord = slova[Math.floor(Math.random() * slova.length)].toUpperCase();
+  for (let i = 0; i < guessingWord.length; i++) {
+    dashArray.push("_");
+  }
+  newGame();
+}
+function displayWord() {
+  let ul = document.querySelector("ul");
+  for (let i = 0; i < dashArray.length; i++) {
+    let element = document.createElement("li");
+    element.innerHTML = "_";
+    ul.appendChild(element);
+  }
+}
+function displayButton() {
+  let alphabet = document.querySelector(".alphabet");
+  for (let i = 0; i < ceskaAbeceda.length; i++) {
+    let button = document.createElement("button");
+    button.classList.add("btn", "btn-primary");
+    button.innerHTML = ceskaAbeceda[i];
+    button.onclick = () => {
+        checkLetter(button);
+    }
+    alphabet.appendChild(button);
+  }
+}
+function newGame() {
+  displayWord();
+  displayButton();
+}
+function checkLetter(button){
+    let buttonText = button.innerHTML.toUpperCase();
     for(let i = 0; i < guessingWord.length; i++){
-        dashArray.push("_");
-    }
-    newGame();
-}  
-function displayWord(){
-    let ul = document.querySelector("ul");
-    
-    for(let i = 0; i < dashArray.length; i++){
-        let element = document.createElement("li");
-        element.innerHTML = "_";
-        ul.appendChild(element);
-    }
-}
-function displayButtons(){
-    let alphabet = document.querySelector(".alphabet");
-    for(let i = 0; i < ceskaAbeceda.length; i++){
-        let button = document.createElement("button");
-        button.classList.add("btn", "btn-primary");
-        button.innerHTML = ceskaAbeceda[i];
-        button.onclick = () => {
-            if(checkButton(button.innerHTML)){
-                button.classList.add("disabled");
-                button.style.backgroundColor = "green";
-            }else{
-                button.style.backgroundColor = "red";
-            }
-        }
-        alphabet.appendChild(button);
-    }
-}
-function newGame(){
-    displayWord();
-    displayButtons();
-}
-
-function checkButton(value){
-    for(let i = 0; i < guessingWord.length; i++){
-        if(guessingWord[i] == value){
-            dashArray[i] = value;
-            overrideValue(i, value);
-            return true;
+        if(guessingWord[i] == buttonText){
+            dashArray[i] = buttonText;
         }
     }
-    return false;
+    UpdateDashes();
+    UpdateButtons(button);
 }
-function overrideValue(index, char){
-    let listOfLi = document.querySelectorAll("li");
-    listOfLi[index].innerHTML = char;
+function UpdateButtons(button){
+    if(UpdateColorOfButton(button)){
+        button.style.backgroundColor = "green";
+    }else{
+        button.style.backgroundColor = "red";
+    }
+    button.disabled = true;
+}
+function UpdateColorOfButton(button){
+    return guessingWord.includes(button.innerHTML)? true: false;
+}
+function UpdateDashes(){
+    let liArray = document.querySelectorAll("li");
+
+    for(let i = 0; i < guessingWord.length; i++){
+        liArray[i].innerHTML = dashArray[i];
+    }
 }
