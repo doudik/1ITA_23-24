@@ -1,7 +1,6 @@
 // import("./Square.js");
-
-
 const greenSquare = new Square("green");
+new Square("red");
 document.body.addEventListener("keypress", moveSquare);
 
 function moveSquare(){
