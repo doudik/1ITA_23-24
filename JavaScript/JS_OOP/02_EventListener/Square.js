@@ -10,9 +10,13 @@ class Square{
         this.square.style.height = 100 + "px";
         this.square.style.backgroundColor = this.color;
         this.square.onclick = () => {
-            // this.square.currentSquare = this.square;
-            
+             setCurrentSquare(this);
         } 
         document.body.appendChild(this.square);
     }
+}
+let currentSquare;
+
+function setCurrentSquare(objectSquare){
+    currentSquare = objectSquare;
 }
