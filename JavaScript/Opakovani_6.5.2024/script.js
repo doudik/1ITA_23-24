@@ -1,5 +1,4 @@
 const chars = "aáäàãâbcćčdďeéěëèêfghiíïìîjklĺľmnńňñoóôòõöőpqrŕřsśštťuúùůüũûvwxyýzźž";
-
 let input = document.querySelector("#textInput");
 input.addEventListener("keydown", searchAndWriteChars);
 
@@ -18,7 +17,7 @@ function searchAndWriteChars(){
                 let ltd = document.createElement("td");
                 let rtd = document.createElement("td");
                 let rrtd = document.createElement("td");
-
+                
                 ltd.innerHTML = chars[i].toUpperCase();
                 rtd.innerHTML = tmp;
                 rrtd.innerHTML = Math.floor((tmp / inputText.length) * 10000) / 100 + "%";
